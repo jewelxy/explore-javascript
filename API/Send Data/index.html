@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Data</title>
+   
+    <style>
+ .showUserInfo{
+        margin-top: 15px;
+        height: 300px;
+        width: 500px;
+        border: 2px solid lightcoral;
+    }
+    </style>
+</head>
+<body>
+    <h1>Send Data from Client to Server</h1>
+
+    <input type="text" placeholder="Title Here" id="title">
+    <br><br>
+    <input type="text" placeholder="Post Here" id="postInfo">
+    <br><br>
+    <button id="Submit">Submit</button>
+<div class="showUserInfo">
+     <span><h3>Hi,</h3><h3 id="userName"></h3></span>
+    <p id="showData"> </p>
+</div>
+    
+
+
+    <script>
+        const buttonSubmit = document.getElementById("Submit");
+        buttonSubmit.addEventListener("click",function(){
+                // console.log("Click Korse");
+            displayData();
+        });
+
+        function displayData(){
+            const titleInput = document.getElementById("title").value;
+            const postInput = document.getElementById("postInfo").value;
+            // console.log(titleInput,postInput);
+            const placeData = document.getElementById("showData");
+            placeData.innerText = postInput;
+            const hiUser = document.getElementById("userName");
+            hiUser.innerText = titleInput;
+        }
+    </script>
+</body>
+</html>

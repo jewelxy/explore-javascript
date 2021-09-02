@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun With API</title>
+</head>
+<body>
+    <h1 id="activity"></h1>
+    <h3>Learn From : <a href="" id="explore_link">visit this place</a></h3>
+
+    <script>
+       function doSomething(){
+        fetch('http://www.boredapi.com/api/activity/')
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+            document.getElementById("activity").innerText = data.activity;
+        })
+       }
+
+     function timeConvert(){
+                const time = 1000*5;
+                return time;
+     }
+
+       setInterval(() => {
+        doSomething();
+       }, timeConvert());
+    </script>
+</body>
+</html>
